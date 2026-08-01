@@ -7,18 +7,23 @@
 </head>
 <body>
     <h2>Register</h2>
-    <form id="registerForm">
-        <label for="username">Username:</label>
-        <input type="text" id="username" required><br><br>
-        
-        <label for="phone">Phone Number:</label>
-        <input type="text" id="phone" required><br><br>
-        
-        <label for="password">Password:</label>
-        <input type="password" id="password" required><br><br>
-        
-        <button type="button" onclick="register()">Register</button>
-    </form>
+<form id="registerForm">
+    <label for="username">Username:</label>
+    <input type="text" id="username" required><br><br>
+
+    <label for="phone">Phone Number:</label>
+    <input type="text" id="phone" required><br><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" required><br><br>
+
+    <button type="button" onclick="register()">Register</button>
+
+    <p>
+        Already registered?
+        <a href="Login.html">Login here</a>
+    </p>
+</form>
     <script>
         function register() {
             const username = document.getElementById('username').value;
