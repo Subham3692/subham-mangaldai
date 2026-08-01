@@ -1,116 +1,68 @@
-/* Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
 
 body{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    min-height:100vh;
-    background:linear-gradient(-45deg,#0f2027,#203a43,#2c5364,#4a00e0);
-    background-size:400% 400%;
-    animation:bg 12s ease infinite;
+  display:flex;justify-content:center;align-items:center;
+  min-height:100vh;padding:1rem;
+  background:linear-gradient(-45deg,#0f2027,#203a43,#2c5364,#4a00e0);
+  background-size:400% 400%;animation:bg 12s ease infinite;
 }
+@keyframes bg{0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
 
-@keyframes bg{
-    0%{background-position:0% 50%;}
-    50%{background-position:100% 50%;}
-    100%{background-position:0% 50%;}
+form,.welcome-box{
+  width:100%;max-width:420px;padding:2rem 1.8rem;
+  border-radius:24px;
+  background:rgba(255,255,255,.10);
+  backdrop-filter:blur(14px) saturate(180%);
+  -webkit-backdrop-filter:blur(14px) saturate(180%);
+  border:1px solid rgba(255,255,255,.20);
+  box-shadow:0 20px 40px rgba(0,0,0,.5);
+  animation:pop .6s cubic-bezier(.23,1,.32,1);
 }
+@keyframes pop{from{transform:scale(.85) translateY(30px);opacity:0;}to{transform:scale(1) translateY(0);opacity:1;}}
 
-body::before{
-    content:"";
-    position:absolute;
-    width:250px;
-    height:250px;
-    background:rgba(255,255,255,.15);
-    border-radius:50%;
-    top:8%;
-    left:8%;
-    filter:blur(20px);
-}
+h1,h2{text-align:center;color:#fff;font-weight:600;}
+h1{font-size:clamp(1.8rem,6vw,2.8rem);}
+h2{font-size:clamp(1.5rem,5vw,2.2rem);}
+p{color:#eee;text-align:center;margin-top:1.2rem;font-size:.95rem;}
 
-body::after{
-    content:"";
-    position:absolute;
-    width:300px;
-    height:300px;
-    background:rgba(0,255,255,.15);
-    border-radius:50%;
-    bottom:5%;
-    right:5%;
-    filter:blur(25px);
-}
-
-form,
-.container{
-    position:relative;
-    width:360px;
-    padding:35px;
-    border-radius:20px;
-    background:rgba(255,255,255,.12);
-    backdrop-filter:blur(15px);
-    border:1px solid rgba(255,255,255,.25);
-    box-shadow:0 10px 30px rgba(0,0,0,.4);
-    animation:popup .7s;
-}
-
-@keyframes popup{
-    from{
-        transform:scale(.7);
-        opacity:0;
-    }
-    to{
-        transform:scale(1);
-        opacity:1;
-    }
-}
-
-h1,h2{
-    text-align:center;
-    color:#fff;
-    margin-bottom:20px;
-}
-
-p{
-    color:#eee;
-    text-align:center;
-    margin-top:15px;
-}
-
-label{
-    color:#fff;
-    font-weight:500;
-}
-
+label{display:block;color:#fff;font-weight:500;font-size:.9rem;margin-bottom:.2rem;}
 input{
-    width:100%;
-    padding:12px;
-    margin-top:6px;
-    margin-bottom:18px;
-    border:none;
-    border-radius:10px;
-    outline:none;
-    background:rgba(255,255,255,.2);
-    color:#fff;
-    font-size:15px;
+  width:100%;padding:.75rem 1rem;margin:.2rem 0 1.2rem 0;
+  border:none;border-radius:12px;
+  background:rgba(255,255,255,.15);color:#fff;font-size:1rem;
+  transition:.25s;
 }
+input:focus{background:rgba(255,255,255,.25);box-shadow:0 0 0 3px rgba(0,229,255,.4);}
+input::placeholder{color:rgba(255,255,255,.55);}
 
-input::placeholder{
-    color:#ddd;
+button{
+  width:100%;padding:.85rem;border:none;border-radius:12px;
+  background:linear-gradient(135deg,#00c6ff,#0072ff);
+  color:#fff;font-size:1.1rem;font-weight:600;cursor:pointer;
+  transition:transform .2s,box-shadow .3s,background .3s;
 }
+button:hover{transform:translateY(-3px);box-shadow:0 12px 24px rgba(0,0,0,.3);background:linear-gradient(135deg,#ff512f,#dd2476);}
+button:active{transform:scale(.96);}
 
-input:focus{
-    background:rgba(255,255,255,.3);
-    box-shadow:0 0 10px #00e5ff;
+a{color:#7ff5ff;text-decoration:none;font-weight:500;transition:color .2s;}
+a:hover{color:#ffff88;text-decoration:underline;}
+
+.welcome-box{text-align:center;padding:2.5rem 2rem;}
+.welcome-box h1{color:#7fffd4;font-size:clamp(2rem,7vw,3rem);}
+.welcome-box button{width:auto;padding:.7rem 2.8rem;}
+
+@media(max-width:400px){
+  form,.welcome-box{padding:1.5rem 1rem;}
+  input{padding:.65rem .9rem;font-size:.95rem;}
+  button{padding:.75rem;font-size:1rem;}
 }
-
+@media(min-width:1024px){
+  form,.welcome-box{max-width:480px;padding:2.5rem 2.5rem;}
+  input{padding:.9rem 1.2rem;font-size:1.05rem;}
+  button{padding:1rem;font-size:1.2rem;}
+}
 button{
     width:100%;
     padding:12px;
